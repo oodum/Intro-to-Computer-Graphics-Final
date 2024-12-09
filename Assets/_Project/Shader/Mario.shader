@@ -4,7 +4,7 @@ Shader "Custom/Hologram"
     {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _OutlineColor("Outline Color", Color) = (0,0,0,1)
-        _OutlineWidth("Outline Width", Range(0.0, 0.03)) = 0.01
+        _OutlineWidth("Outline Width", Range(0.0, 1)) = 0.01
         _Shininess("Shininess", Range(0,1)) = 0.4
         _SpecularColor("Specular Color", Color) = (0.5,0.5,0.5,1)
     }
@@ -81,7 +81,10 @@ Shader "Custom/Hologram"
                 float specularFactor = pow(saturate(dot(reflectDirection, viewDirection)), _Shininess);
                 float3 specular = specularFactor * _SpecularColor * light.color;
 
-                return float4(diffuse + ambient + specular + color, 1);
+                // Outline
+                float4 outlineColor = _OutlineColor * step(_OutlineWidth, fwidth(NdotL));
+
+                return float4(diffuse + ambient + specular + color + outlineColor, 1);
             }
             ENDHLSL
         }
