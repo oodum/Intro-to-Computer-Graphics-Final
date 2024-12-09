@@ -2,6 +2,15 @@
 Adam Tam - 100868600
 Odd number -> Super Mario World
 
+# How to play
+You can dash forward and backward by pressing A or D
+
+You can jump by pressing Space
+
+If an enemy hits you, you will take damage
+
+Space will use your Spin Move. If you touch an enemy during your spin, they will die.
+
 # Shader 1 -> Hologram
 This is a modified version of the hologram we learned in class. The most important
 part about this shader is the fact that opacity is applied manually to all components except for the rim.
