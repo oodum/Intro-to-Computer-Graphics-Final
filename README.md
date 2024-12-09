@@ -318,6 +318,10 @@ Shader "Custom/Hologram"
 }
 ```
 
+# Shader 4 -> Basic Ground Shader
+Unfortunately, I did not have time to implement a more complex shader for the enemies, so I had to use this basic shader instead.
+This shader is a simple shader that 
+
 # Color Correction
 I used Unity's Post Processing effects to color-grade the scene. This is all visible inside the scene's Global Volume.
 
